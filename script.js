@@ -4,8 +4,23 @@ document.addEventListener("DOMContentLoaded", whenDOMContentLoaded);
 function whenDOMContentLoaded() {
     addGameVersionOptions()
 
+    preloadPatternImages()
+
     const shapeSelect = document.getElementById('shape')
     shapeSelect.addEventListener('change', onShapeSelectChange)
+}
+
+
+function preloadPatternImages() {
+    // From https://stackoverflow.com/questions/3646036/preloading-images-with-javascript
+
+    const images = ["double_line.png", "quad_line.png", "quad_square.png", 
+        "quint_blob.png", "quint_line.png", "triple_corner.png", "triple_line.png"]
+    
+    images.forEach( (image) => {
+        let img = new Image();
+        img.src = "assets/images/patterns/"+image
+    })
 }
 
 

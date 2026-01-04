@@ -1,4 +1,13 @@
-document.addEventListener("DOMContentLoaded", addGameVersionOptions);
+document.addEventListener("DOMContentLoaded", whenDOMContentLoaded);
+
+
+function whenDOMContentLoaded() {
+    addGameVersionOptions()
+
+    const shapeSelect = document.getElementById('shape')
+    shapeSelect.addEventListener('change', onShapeSelectChange)
+}
+
 
 function addGameVersionOptions() {
     const versionRanges = {
@@ -36,4 +45,12 @@ function addGameVersionOptions() {
         if (i == 0) option.selected = true;
         versionSelect.add(option);
     }
+}
+
+
+function onShapeSelectChange() {
+    const shapeSelect = document.getElementById('shape')
+    let currentShape = shapeSelect.value
+
+    document.getElementById('pattern-image').src = 'assets/images/patterns/' + currentShape.toLowerCase() + ".png"
 }

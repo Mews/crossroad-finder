@@ -27,7 +27,7 @@
     
                 <div class="input-group">
                     <label for="version">Game Version:</label>
-                    <select id="version" name="game_version"></select>
+                    <select id="version" name="game_version" required></select>
                 </div>
 
                 <div class="input-group">
@@ -42,7 +42,7 @@
 
                 <div class="input-group">
                     <label for="shape">Crossroad Shape:</label>
-                    <select id="shape" name="crossroad_shape">
+                    <select id="shape" name="crossroad_shape" required>
                         <option value="DOUBLE_LINE" selected>Double line</option>
                         <option value="TRIPLE_LINE">Triple line</option>
                         <option value="QUAD_LINE">Quadruple line</option>
@@ -56,19 +56,19 @@
                 <div class="settings-grid">
                     <div class="small-input">
                         <label for="max_y">Max Crossroad Y:</label>
-                        <input type="number" id="max_y" name="max_y" value="255">
+                        <input type="number" id="max_y" name="max_y" value="255" required>
                     </div>
                     <div class="small-input">
                         <label for="radius">Search Radius:</label>
-                        <input type="number" id="radius" name="search_radius" value="10000">
+                        <input type="number" id="radius" name="search_radius" value="10000" required>
                     </div>
                     <div class="small-input">
                         <label for="center_x">Search Center X:</label>
-                        <input type="number" id="center_x" name="search_center_x" value="0">
+                        <input type="number" id="center_x" name="search_center_x" value="0" required>
                     </div>
                     <div class="small-input">
                         <label for="center_z">Search Center Z:</label>
-                        <input type="number" id="center_z" name="search_center_z" value="0">
+                        <input type="number" id="center_z" name="search_center_z" value="0" required>
                     </div>
                 </div>
 

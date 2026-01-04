@@ -15,9 +15,15 @@ header {
     padding: 30px;
 }
 
+header h1 {
+    font-family: minecraftfont;
+    letter-spacing: 4px;
+}
+
 header p {
     font-size: small;
     color: #ffcc00;
+    display: none;
 }
 
 main {
@@ -69,6 +75,12 @@ footer {
     flex-direction: row;
     justify-content: center;
     gap: 50px;
+}
+
+footer a {
+    color: #FFAA00;
+    text-shadow: 0 0 5px black;
+    font-weight: bold;
 }
 
 
@@ -142,4 +154,10 @@ button:hover {
         margin-bottom: 15px;
     }
     
+}
+
+/*Load custom minecraft font*/
+@font-face {
+    font-family: minecraftfont;
+    src: url("assets/fonts/Minecraft.ttf");
 }

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find nether fortress crossroad patterns easily">
+    <meta name="keywords" content="Minecraft, Nether fortress, Crossroad, Crossroad pattern, Crossroad finder, Crossroad pattern finder">
+    <meta name="author" content="Mews">
+    <title>Crossroad Pattern Finder</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="script.js"></script>
+
+</head>
+<body>
+
+    <header>
+        <h1>Crossroad pattern finder</h1>
+        <p>Made by Mews (and more importantly Gaider10)</p>
+    </header>
+
+    <main>
+        <div class="left-half">
+
+            <form id="finder-form">
+    
+                <div class="input-group">
+                    <label for="version">Game Version:</label>
+                    <select id="version" name="game_version"></select>
+                </div>
+
+                <div class="input-group">
+                    <label for="seed">World Seed:</label>
+                    <input type="number" id="seed" name="world_seed" placeholder="e.g. 448000115" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="salt">Fortress Salt (Optional):</label>
+                    <input type="number" id="salt" name="fortress_salt" placeholder="Leave empty for default value unless you know what you're doing">
+                </div>
+
+                <div class="input-group">
+                    <label for="shape">Crossroad Shape:</label>
+                    <select id="shape" name="crossroad_shape">
+                        <option value="DOUBLE_LINE" selected>Double line</option>
+                        <option value="TRIPLE_LINE">Triple line</option>
+                        <option value="QUAD_LINE">Quadruple line</option>
+                        <option value="QUINT_LINE">Quintuple line</option>
+                        <option value="TRIPLE_CORNER">Triple corner</option>
+                        <option value="QUAD_SQUARE">Quadruple square</option>
+                        <option value="QUINT_BLOB">Quintuple blob</option>
+                    </select>
+                </div>
+
+                <div class="settings-grid">
+                    <div class="small-input">
+                        <label for="max_y">Max Y:</label>
+                        <input type="number" id="max_y" name="max_y" value="255">
+                    </div>
+                    <div class="small-input">
+                        <label for="radius">Radius:</label>
+                        <input type="number" id="radius" name="search_radius" value="10000">
+                    </div>
+                    <div class="small-input">
+                        <label for="center_x">Center X:</label>
+                        <input type="number" id="center_x" name="search_center_x" value="0">
+                    </div>
+                    <div class="small-input">
+                        <label for="center_z">Center Z:</label>
+                        <input type="number" id="center_z" name="search_center_z" value="0">
+                    </div>
+                </div>
+
+                <div class="image-preview">
+                    <p>Looking for this pattern:</p>
+                    <img id="pattern-image" src="assets/images/patterns/double_line.png" alt="Pattern Preview" style="max-width: 10%; border: 1px solid white;">
+                </div>
+
+                <button type="button" onclick="submitForm()">Find Crossroad</button>
+            </form>
+
+        </div>
+        <div class="right-half"></div>
+    </main>
+
+    <footer>
+        <a href="https://github.com/Mews/crossroad-finder-website">Source code</a>
+        <a href="https://github.com/Gaider10/CrossroadFinder">Crossroad finder tool</a>
+    </footer>
+
+</body>
+</html>

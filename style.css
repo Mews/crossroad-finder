@@ -1,0 +1,145 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+
+    height: 100vh;
+}
+
+header {
+    background-image: url("assets/images/backgrounds/netherrack.webp");
+    background-repeat: repeat-x;
+    background-size: 200px 200px;
+
+    color: #FFAA00;
+    
+    padding: 30px;
+}
+
+header p {
+    font-size: small;
+    color: #ffcc00;
+}
+
+main {
+    background-image: url("assets/images/backgrounds/netherrack_dark.webp");
+    background-size: 100px 100px;
+
+    height: 80%;
+
+    color: white;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: stretch;
+}
+
+main .left-half, main .right-half {
+    margin: 50px;
+    padding: 25px;
+
+    text-align: left;
+
+    border-width: 5px;
+    border-style: ridge;
+    border-radius: 20px;
+    
+    border-color: lightslategray; 
+
+    background-color: rgba(119, 136, 153, 0.5);
+}
+
+main .left-half {
+    width: 70%;
+}
+
+main .right-half {
+    width: 30%;
+}
+
+
+footer {
+    display: flex;
+
+    background-image: url("assets/images/backgrounds/bedrock.webp");
+    background-size: 125px 125px;
+
+    padding: 50px;
+
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+}
+
+
+.input-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #FFAA00;
+}
+
+input, select {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #555;
+    background-color: #222;
+    color: white;
+}
+
+.settings-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #FFAA00;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #ffcc00;
+}
+
+
+/*Small screens*/
+@media only screen and (max-width:768px) {
+    main {
+        flex-direction: column;
+        height: 120%;
+    }
+
+    main .left-half, main .right-half {
+        margin: 20px;
+    }
+
+    main .left-half {
+        width: auto;
+        height: 70%;
+    }
+
+    main .right-half {
+        width: auto;
+        height: 30%;
+    }
+    
+    .settings-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+    
+}

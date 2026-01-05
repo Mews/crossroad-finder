@@ -122,7 +122,9 @@ async function callApi(payload) {
         body: JSON.stringify(payload)
     });
 
-    return response
+    const data = await response.json();
+
+    return data;
 }
 
 
@@ -134,7 +136,48 @@ async function submitForm() {
         return;
     }
 
+    
+    const submitButton = document.getElementById('submit-btn');
+    submitButton.disabled = true;
+
+    const originalText = submitButton.textContent;
+    submitButton.textContent = 'Searching...'
+
     payload = getFormData();
 
-    response = await callApi(payload);
+    crossroads = (await callApi(payload))["crossroads"];
+
+    displayResults(crossroads)
+
+    submitButton.textContent = originalText;
+    submitButton.disabled = false;
 }
+
+
+function displayResults(crossroads) {
+    const resultsContainer = document.getElementById('search-results')
+
+    resultsContainer.innerHTML = '';
+
+    if (crossroads.length === 0) {
+        resultsContainer.innerHTML = '<Label style="padding:10px; color:wheat;">No crossroads found inside range</Label>'
+        return;
+    }
+
+    for (let i = 0; i < crossroads.length; i++) {
+        crossroad = crossroads[i];
+
+        const resultRow = document.createElement('span')
+        resultRow.className = 'result-row';
+        resultRow.innerText = `${crossroad[0]} ${crossroad[1]} ${crossroad[2]}`;
+
+        resultsContainer.appendChild(resultRow)
+    }
+}
+
+
+function onResultRowClicked(rowSpan) {
+    console.log(rowSpan.innerText.trim());
+}
+
+

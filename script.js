@@ -69,3 +69,72 @@ function onShapeSelectChange() {
 
     document.getElementById('pattern-image').src = 'assets/images/patterns/' + currentShape.toLowerCase() + ".png"
 }
+
+
+function validateForm() {
+    const form = document.getElementById('finder-form');
+
+    for (let i = 0; i < form.elements.length; i++) {
+        const field = form.elements[i];
+
+        if (field.hasAttribute('required') && field.value.trim() === '') {
+            return field
+        }
+    }
+
+    return true
+}
+
+
+function getFormData() {
+    gameVersion = document.getElementById('version').value
+    worldSeed = document.getElementById('seed').value
+    fortressSalt = document.getElementById('salt').value
+    crossroadShape = document.getElementById('shape').value
+    maxY = document.getElementById('max_y').value
+    searchRadius = document.getElementById('radius').value
+    searchCenterX = document.getElementById('center_x').value
+    searchCenterZ = document.getElementById('center_z').value
+
+    return {
+        "game_version": gameVersion,
+        "world_seed": BigInt(worldSeed),
+        "fortress_salt":  fortressSalt === '' ? null : BigInt(fortressSalt),
+        "crossroad_shape": crossroadShape,
+        "max_y": BigInt(maxY),
+        "search_radius": BigInt(searchRadius),
+        "search_center_x": BigInt(searchCenterX),
+        "search_center_z": BigInt(searchCenterZ)
+    }
+}
+
+
+async function callApi(payload) {
+    BigInt.prototype.toJSON = function () {
+        return this.toString();
+    };
+
+    const api = 'https://mews.pythonanywhere.com/crossroad-finder/'
+
+    const response = await fetch(api, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+    });
+
+    return response
+}
+
+
+async function submitForm() {
+    validate = validateForm()
+
+    if (!(validateForm() === true)) {
+        alert(`The ${validate.getAttribute('name')} field is required!`)
+        return;
+    }
+
+    payload = getFormData();
+
+    response = await callApi(payload);
+}

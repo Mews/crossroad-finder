@@ -6,11 +6,11 @@ email: ar754456@gmail.com
 url: "https://mews.github.io"
 baseurl: "/crossroad-finder"
 
-logo: /assets/images/seo/logo.png
+logo: assets/images/seo/logo.png
 
-image: /assets/images/seo/banner.png
+image: assets/images/seo/banner.png
 
-google-site-verification: "C3QKOpfcH1sx3mwpP5H-XphVxZUaXJ9nLrvwkFjNrs4"
+google-site-verification: C3QKOpfcH1sx3mwpP5H-XphVxZUaXJ9nLrvwkFjNrs4
 
 plugins:
   - jekyll-seo-tag

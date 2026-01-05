@@ -170,6 +170,10 @@ button:disabled {
     background-color: rgb(134, 115, 115);
 }
 
+.result-row.clicked {
+    background-color: #adff2f;
+    transform: scale(0.95, 0.95);
+}
 
 /*Small screens*/
 @media only screen and (max-width:1100px) {

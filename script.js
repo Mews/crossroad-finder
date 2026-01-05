@@ -165,14 +165,43 @@ function displayResults(crossroads) {
     }
 
     for (let i = 0; i < crossroads.length; i++) {
-        crossroad = crossroads[i];
+        let crossroad = crossroads[i];
 
         const resultRow = document.createElement('span')
         resultRow.className = 'result-row';
         resultRow.innerText = `${crossroad[0]} ${crossroad[1]} ${crossroad[2]}`;
 
+        resultRow.addEventListener('click', ()=>copyCoordinatesToClipboard(resultRow))
+
         resultsContainer.appendChild(resultRow)
     }
+}
+
+
+function copyCoordinatesToClipboard(resultRow) {
+    if (resultRow.disabled) return;
+
+    resultRow.disabled = true;
+
+    const coords = resultRow.innerText;
+
+    navigator.clipboard.writeText(`/tp @s ${coords.trim()}`)
+
+    resultRow.innerText = 'Copied!'
+    resultRow.classList.add('clicked')
+
+    setTimeout(
+        () => {
+            resultRow.classList.remove('clicked')
+        }, 150
+    )
+
+    setTimeout(
+        () => {
+            resultRow.innerText = coords;
+            resultRow.disabled = false;
+        }, 500
+    );
 }
 
 

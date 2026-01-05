@@ -14,7 +14,7 @@ function whenDOMContentLoaded() {
 function preloadPatternImages() {
     // From https://stackoverflow.com/questions/3646036/preloading-images-with-javascript
 
-    const images = ["double_line.png", "quad_line.png", "quad_square.png", 
+    const images = ["double.png", "quad_line.png", "quad_square.png", 
         "quint_blob.png", "quint_line.png", "triple_corner.png", "triple_line.png"]
     
     images.forEach( (image) => {

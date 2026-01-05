@@ -130,7 +130,11 @@ button:hover {
 @media only screen and (max-width:768px) {
     main {
         flex-direction: column;
-        height: 120%;
+        height: 140%;
+    }
+
+    footer {
+        flex-direction: column;
     }
 
     main .left-half, main .right-half {
@@ -139,12 +143,12 @@ button:hover {
 
     main .left-half {
         width: auto;
-        height: 70%;
+        height: 55%;
     }
 
     main .right-half {
         width: auto;
-        height: 30%;
+        height: 50%;
     }
     
     .settings-grid {

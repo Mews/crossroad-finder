@@ -27,13 +27,13 @@ function getFormData() {
 
     return {
         "game_version": gameVersion,
-        "world_seed": BigInt(worldSeed),
-        "fortress_salt":  fortressSalt === '' ? null : BigInt(fortressSalt),
+        "world_seed": worldSeed,
+        "fortress_salt":  fortressSalt === '' ? null : fortressSalt,
         "crossroad_shape": crossroadShape,
-        "max_y": BigInt(maxY),
-        "search_radius": BigInt(searchRadius),
-        "search_center_x": BigInt(searchCenterX),
-        "search_center_z": BigInt(searchCenterZ)
+        "max_y": maxY,
+        "search_radius": searchRadius,
+        "search_center_x": searchCenterX,
+        "search_center_z": searchCenterZ
     }
 }
 

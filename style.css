@@ -135,6 +135,11 @@ button:disabled {
     pointer-events: none; 
 }
 
+.left-half .image-preview #pattern-image {
+    width: 140px;
+
+    border: 1px solid white;
+}
 
 #search-results {
     margin-top: 10px;

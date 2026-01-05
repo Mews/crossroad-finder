@@ -1,8 +1,4 @@
 export async function callApi(payload) {
-    BigInt.prototype.toJSON = function () {
-        return this.toString();
-    };
-
     const api = 'https://mews.pythonanywhere.com/crossroad-finder/'
 
     const response = await fetch(api, {

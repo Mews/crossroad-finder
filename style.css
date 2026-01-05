@@ -135,6 +135,8 @@ button:hover {
 
     footer {
         flex-direction: column;
+        gap: 20px;
+        padding: 30px;
     }
 
     main .left-half, main .right-half {
